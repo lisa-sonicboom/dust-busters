@@ -225,7 +225,7 @@
     grid-template-rows: 1fr 1fr;
     gap: 2px;
     width: 360px;
-    height: 360px;
+    height: 300px;
     position: relative;
     z-index: 1;
     animation: fadeUp 0.8s 0.4s ease both;
@@ -233,14 +233,13 @@
 
   .stat-card {
     background: rgba(255,255,255,0.06);
-    padding: 24px;
+    padding: 16px 24px;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,0.08);
     transition: background 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    aspect-ratio: 1;
   }
   .stat-card:first-child { border-radius: 16px 0 0 0; }
   .stat-card:nth-child(2) { border-radius: 0 16px 0 0; }
