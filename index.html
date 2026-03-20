@@ -222,6 +222,99 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="section">
+    <div class="section-label">FAQ</div>
+    <h2>Questions hosts ask us.</h2>
+    <p class="section-sub">Everything you need to know before getting started.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How quickly can you turn over a property?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Most properties are ready within 2–4 hours of guest checkout, depending on size. Studios and 1-bedrooms are typically done in under 2 hours. We work within your checkout-to-check-in window and will always confirm timing upfront.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What areas of Porto do you cover?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We cover Porto city centre and all key Airbnb neighbourhoods including Ribeira, Bonfim, Cedofeita, Miragaia, Foz, and Boavista. Not sure if we cover your area? Just ask — we'll let you know.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do I need to be present during the clean?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Not at all. Most of our hosts are hands-off entirely. We work with lockboxes, key safes, or smart locks. Just make sure we have access instructions and we handle the rest. You'll receive photos the moment we're done so you can see the property remotely.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What's included in the photo check-out report?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Every room, every surface — kitchen counters, stovetop, bathrooms, made beds, living areas, and all trash cans. We also photograph any pre-existing damage we notice so you're protected from false claims. Reports are sent directly after every clean.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can you handle last-minute or same-day bookings?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes — it's one of the things we built KleenBNB specifically to handle. Same-day turnovers are available (subject to scheduling), with a small surcharge. Regular clients get priority slots, which means you're always first in the queue when things get tight.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you supply cleaning products and linens?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We supply all cleaning products and equipment. Linens can go either way — we can use yours or manage the full linen service (collection, laundering, and restocking fresh sets) as an add-on. We'll set this up during onboarding based on your preference.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What happens if something is damaged or missing?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We document the property's condition on arrival before touching anything, and again after cleaning. If something is damaged during our clean, we'll tell you immediately and take responsibility. Our photo record also protects you against guests claiming damage that was already there.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How does billing work?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We invoice per turnover at the flat rates listed in our pricing section. For regular clients we offer weekly or monthly invoicing — whatever is easier for you. No surprise charges. If anything extra comes up (like a particularly heavy deep clean), we'll always confirm cost before proceeding.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-inner">
@@ -243,5 +336,13 @@
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
     <a hr
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 </body>
 </html>
