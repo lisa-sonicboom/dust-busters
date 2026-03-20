@@ -655,7 +655,7 @@
 
   /* ── FAQ ── */
   .faq-wrap {
-    background: var(--teal);
+    background: #005f73;
     padding: 100px 48px;
     position: relative;
     overflow: hidden;
