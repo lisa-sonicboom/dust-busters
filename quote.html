@@ -374,15 +374,44 @@
   }
 
   /* RESPONSIVE */
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .quote-page { grid-template-columns: 1fr; }
-    .quote-left { padding: 100px 32px 60px; }
-    .quote-right { padding: 60px 32px 80px; }
+    .quote-left { padding: 110px 48px 60px; }
+    .quote-right { padding: 60px 48px 80px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 61px; left: 0; right: 0;
+      background: rgba(250,249,246,0.98);
+      backdrop-filter: blur(12px);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 12px 0 20px;
+      border-bottom: 1px solid rgba(10,147,150,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 14px 24px; font-size: 1rem; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .nav-cta { margin: 12px 24px 0; text-align: center; border-radius: 8px !important; padding: 14px 24px !important; }
+    .quote-page { grid-template-columns: 1fr; }
+    .quote-left { padding: 96px 24px 52px; }
+    .quote-right { padding: 48px 24px 72px; }
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full { grid-column: 1; }
     .submit-btn { grid-column: 1; }
     .form-note { grid-column: 1; }
     .divider { grid-column: 1; }
+  }
+
+  @media (max-width: 420px) {
+    .quote-left { padding: 88px 20px 48px; }
+    .quote-right { padding: 40px 20px 64px; }
   }
 </style>
 </head>
@@ -391,7 +420,10 @@
 <!-- NAV -->
 <nav>
   <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">Kleen<span>BNB</span></a></div>
-  <div class="nav-links">
+  <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="index.html#services">Services</a>
     <a href="index.html#how">How it works</a>
     <a href="index.html#pricing">Pricing</a>
@@ -560,10 +592,14 @@ function submitForm() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Remove error styling on input
 document.querySelectorAll('input, select, textarea').forEach(el => {
   el.addEventListener('input', () => el.style.borderColor = '');
 });
+
+function toggleNav(btn) {
+  btn.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
 </script>
 </body>
 </html>
