@@ -1,496 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KleenBNB – Airbnb Cleaning in Porto</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KleenBNB — Airbnb Turnover Cleaning Porto</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#home" class="logo">
-        <span class="logo-icon">✦</span>
-        <span class="logo-text">KleenBNB</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#why">Why us</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">Get a Free Quote</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
-    <ul>
-      <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
-      <li><a href="#how-it-works" onclick="closeMobileMenu()">How it works</a></li>
-      <li><a href="#why" onclick="closeMobileMenu()">Why us</a></li>
-      <li><a href="#pricing" onclick="closeMobileMenu()">Pricing</a></li>
-      <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
-      <li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
-      <li><a href="#contact" onclick="closeMobileMenu()" class="mobile-cta">Get a Free Quote</a></li>
-    </ul>
+<!-- NAV -->
+<nav>
+  <div class="logo">Kleen<span>BNB</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="quote.html" class="nav-cta">Get a quote</a>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg-dots"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Porto's Trusted Airbnb Cleaners</div>
-      <h1 class="hero-headline">
-        5-Star Turnovers<br />
-        <em>for Airbnb Hosts</em><br />
-        in Porto.
-      </h1>
-      <p class="hero-sub">Fast, reliable cleaning built for Airbnb hosts and short-term rental operators. We work around your guest schedule. Your listing stays 5 stars. We make it happen.</p>
-      <div class="hero-cta-row">
-        <a href="#contact" class="btn-primary">Get a Free Quote →</a>
-        <a href="#services" class="btn-secondary">See Our Services</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Porto's Airbnb Cleaning Specialists</div>
+    <h1>Your guests deserve<br><em>5-star clean.</em><br>Every time.</h1>
+    <p class="hero-sub">Same-day turnovers. Photo check-outs. Linens handled. We take the stress of every checkout off your plate — so your next guest walks in impressed.</p>
+    <div class="hero-btns">
+      <a href="quote.html" class="btn-primary">Get a free quote</a>
+      <a href="#how" class="btn-ghost">How it works →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number">★ 5.0</div>
+        <div class="stat-label">Average host rating after switching to KleenBNB</div>
       </div>
-      <div class="trust-row">
-        <span class="trust-pill">⚡ Same-day turnover</span>
-        <span class="trust-pill">🤝 Trusted by local hosts</span>
-        <span class="trust-pill">🛡 Fully insured</span>
+      <div class="stat-card">
+        <div class="stat-number">4h</div>
+        <div class="stat-label">Average turnover time for a 2-bedroom</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Photo documentation after every single clean</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Missed turnovers. We show up, every time.</div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card hero-card--1">
-        <div class="hc-icon">✓</div>
-        <div class="hc-text">Kitchen — Complete</div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><span>⚡</span><span>Same-day availability</span></div>
+    <div class="trust-item"><span>📸</span><span>Photo check-out every clean</span></div>
+    <div class="trust-item"><span>🛏️</span><span>Linen & restocking service</span></div>
+    <div class="trust-item"><span>📍</span><span>Porto city centre coverage</span></div>
+    <div class="trust-item"><span>🔒</span><span>Insured & trusted team</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-wrap" id="services">
+  <div class="services-inner">
+    <div class="section-label">What we do</div>
+    <h2>Everything a host needs.<br>Nothing you don't.</h2>
+    <p class="section-sub">We built KleenBNB specifically for short-term rental hosts. Every service is designed around your turnaround window.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <div class="service-title">Express Turnover</div>
+        <div class="service-desc">Full clean between guest stays, timed to your checkout and check-in window. We coordinate directly with your schedule — no micromanaging needed.</div>
       </div>
-      <div class="hero-card hero-card--2">
-        <div class="hc-icon">✓</div>
-        <div class="hc-text">Bathroom — Complete</div>
+      <div class="service-card">
+        <div class="service-icon">📸</div>
+        <div class="service-title">Photo Check-Out</div>
+        <div class="service-desc">After every clean, we send a complete photo set — every room, every surface. Your proof that the property was guest-ready, and your protection against false claims.</div>
       </div>
-      <div class="hero-card hero-card--3">
-        <div class="hc-icon">✓</div>
-        <div class="hc-text">Fresh Linens — Set</div>
+      <div class="service-card">
+        <div class="service-icon">🛏️</div>
+        <div class="service-title">Linen Service</div>
+        <div class="service-desc">Fresh, hotel-folded linens with every turnover. We handle the collection, laundering, and restocking so you never have to think about it.</div>
       </div>
-      <div class="hero-card hero-card--4">
-        <div class="hc-icon">★</div>
-        <div class="hc-text">5-star ready</div>
+      <div class="service-card">
+        <div class="service-icon">🧴</div>
+        <div class="service-title">Restocking</div>
+        <div class="service-desc">Toilet paper, soap, shampoo, kitchen supplies — we restock your consumables to your spec after every clean. Guests notice the details.</div>
       </div>
-      <div class="hero-img-block">
-        <div class="hero-img-placeholder">
-          <div class="sparkle s1">✦</div>
-          <div class="sparkle s2">✦</div>
-          <div class="sparkle s3">✦</div>
-        </div>
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <div class="service-title">Deep Clean</div>
+        <div class="service-desc">Seasonal or first-time deep cleans that reset your property to its best condition. Perfect before a new listing goes live or after a long stay.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="problem" id="problem">
-    <div class="container">
-      <div class="section-label centered">The Reality</div>
-      <h2 class="section-title centered">Hosting is hard enough without worrying about cleans.</h2>
-      <div class="problem-cards">
-
-        <div class="problem-card">
-          <div class="problem-card-icon">⏱</div>
-          <h3>Tight Turnaround Windows</h3>
-          <p>You have guests checking out at 11am and new ones arriving at 3pm. There's no room for delays, cancellations, or "I'll be there in an hour."</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-icon">⭐</div>
-          <h3>Inconsistent Results</h3>
-          <p>One bad review about cleanliness can tank your rating. Generic cleaning services don't understand what Airbnb guests actually notice.</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-icon">📅</div>
-          <h3>Last-Minute Gaps</h3>
-          <p>Hosts lose sleep over unexpected bookings. You need a cleaning partner who can respond fast when the calendar fills up.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-label centered">What We Do</div>
-      <h2 class="section-title centered">Everything your rental needs between guests</h2>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">🏠</div>
-          <h3>Standard Turnover Clean</h3>
-          <p class="service-desc">Our core service. Everything guests expect to find fresh and spotless.</p>
-          <ul>
-            <li>Full kitchen clean (surfaces, appliances, sink)</li>
-            <li>Bathroom sanitisation &amp; disinfection</li>
-            <li>Linen changes</li>
-            <li>Vacuuming &amp; mopping all floors</li>
-            <li>Dusting all surfaces incl. under furniture</li>
-            <li>Bin emptying &amp; fresh bin bags</li>
-            <li>Restocking of guest amenities (at host's cost)</li>
-          </ul>
-          <div class="service-ideal">Ideal for: every checkout/check-in turnover</div>
-          <a href="#contact" class="card-cta">Book Now →</a>
-        </div>
-
-        <div class="service-card service-card--featured">
-          <div class="service-badge">Most Popular</div>
-          <div class="service-icon">🛏</div>
-          <h3>Turnover Clean + Linen &amp; Laundry</h3>
-          <p class="service-desc">Everything in the Standard clean, plus a fully managed linen service.</p>
-          <ul>
-            <li>All areas from the Standard clean</li>
-            <li>We wash, dry, fold &amp; replace all linens and towels</li>
-            <li>Guest-ready presentation every time</li>
-            <li>Optional pickup and drop-off available</li>
-            <li>Linen tracking &amp; coordination included</li>
-          </ul>
-          <div class="service-ideal service-ideal--light">Ideal for: hosts who want a fully hands-off operation</div>
-          <a href="#contact" class="card-cta">Book Now →</a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">✨</div>
-          <h3>Deep Clean</h3>
-          <p class="service-desc">A thorough reset of your property. Perfect after long stays, end of season, or whenever your place needs a full refresh.</p>
-          <ul>
-            <li>All areas from the Standard clean</li>
-            <li>Inside oven, fridge, microwave &amp; appliances</li>
-            <li>Baseboards &amp; window sills, tracks &amp; frames</li>
-            <li>Behind furniture &amp; appliances</li>
-            <li>Vents &amp; other hard-to-reach areas</li>
-            <li>Grout &amp; tile deep scrub</li>
-          </ul>
-          <div class="service-ideal">Ideal for: new listings, seasonal resets, post-long-stay</div>
-          <a href="#contact" class="card-cta">Book Now →</a>
-        </div>
-
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <div class="service-title">Last-Minute Turnovers</div>
+        <div class="service-desc">Got a same-day booking? We're built for it. Priority slots available for hosts who need rapid response — with no corners cut.</div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-label centered">The Process</div>
-      <h2 class="section-title centered">Up and running in 3 simple steps</h2>
-      <div class="steps-grid">
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section">
+    <div class="section-label">The process</div>
+    <h2>Simple from day one.</h2>
+    <p class="section-sub">Getting started takes 10 minutes. After that, it runs itself.</p>
 
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-icon">📞</div>
-          <h3>Book online or call us</h3>
-          <p>Tell us about your property, your usual checkout/check-in times, and how often you need cleans. We'll match you with a dedicated cleaning team.</p>
-        </div>
-
-        <div class="step-connector">→</div>
-
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-icon">📆</div>
-          <h3>We sync with your calendar</h3>
-          <p>Connect your Airbnb, VRBO, or any booking platform calendar and we'll automatically prepare for every turnover. No back-and-forth needed.</p>
-        </div>
-
-        <div class="step-connector">→</div>
-
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-icon">🏡</div>
-          <h3>Guests arrive to perfection</h3>
-          <p>Your property is cleaned, restocked, and photo-documented before every check-in. You get a notification when it's done.</p>
-        </div>
-
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-title">Tell us about your property</div>
+        <div class="step-desc">Quick call or message. We note your layout, preferences, where linens are kept, and any host-specific instructions.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-title">We sync with your calendar</div>
+        <div class="step-desc">Connect your Airbnb calendar or send us checkout times. We handle scheduling automatically around your bookings.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-title">We clean & document</div>
+        <div class="step-desc">Our team arrives, completes the full checklist, and sends you a photo report the moment the property is ready.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-title">You get 5-star reviews</div>
+        <div class="step-desc">Guests walk in to a spotless property. You collect the reviews. We keep showing up, every time.</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- WHY US -->
-  <section class="why" id="why">
-    <div class="container">
-      <div class="why-inner">
-        <div class="why-left">
-          <div class="section-label">Why KleenBNB</div>
-          <h2>We're not a general cleaning service.<br/>We're an Airbnb specialist.</h2>
-          <p>We understand the pressure of short-term hosting. That's why every part of our process is designed around one goal: your guests walk in and feel like it's a 5-star hotel.</p>
-          <a href="#contact" class="btn-primary">Start Today →</a>
-        </div>
-        <div class="why-grid">
-          <div class="why-item">
-            <div class="why-icon">🎯</div>
-            <h4>We understand guest expectations</h4>
-            <p>We've cleaned hundreds of short-term rentals. We know what gets scrutinized in reviews — and we don't miss it.</p>
-          </div>
-          <div class="why-item">
-            <div class="why-icon">🕐</div>
-            <h4>We work on your schedule</h4>
-            <p>Early mornings, evenings, weekends, holidays… We're available when the bookings happen, not just during business hours.</p>
-          </div>
-          <div class="why-item">
-            <div class="why-icon">⚡</div>
-            <h4>Same-day &amp; emergency turnovers</h4>
-            <p>Got a last-minute booking? We have a rapid-response team available for same-day turnovers.</p>
-          </div>
-          <div class="why-item">
-            <div class="why-icon">👥</div>
-            <h4>Consistent teams &amp; results</h4>
-            <p>Whenever possible, the same cleaners return to your property so they know it inside and out.</p>
-          </div>
-          <div class="why-item">
-            <div class="why-icon">📸</div>
-            <h4>Photo reports after every clean</h4>
-            <p>We send you timestamped photos after each service so you can see the condition of your property from anywhere.</p>
-          </div>
-          <div class="why-item">
-            <div class="why-icon">🛡</div>
-            <h4>Fully insured &amp; vetted staff</h4>
-            <p>All team members are background-checked, trained in short-term rental standards, and covered by our liability insurance.</p>
-          </div>
-        </div>
+<!-- TESTIMONIALS -->
+<div class="testimonial-wrap">
+  <div class="testimonial-inner">
+    <div class="testimonial-left">
+      <div class="section-label">What hosts say</div>
+      <h2>Hosts who stopped worrying about cleanings.</h2>
+    </div>
+    <div class="testimonial-cards">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"I manage three flats in Porto and KleenBNB handles all of them. I haven't had a cleanliness complaint in months. The photos after every clean give me complete peace of mind."</div>
+        <div class="t-author">— Sofia M., Superhost · Bonfim</div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"Same-day turnovers used to be a nightmare. Now I just get a message saying it's done and photos to prove it. Best decision I made for my listing."</div>
+        <div class="t-author">— André P., Host · Ribeira</div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-label centered">Transparent Pricing</div>
-      <h2 class="section-title centered">Simple, transparent pricing</h2>
-      <p class="pricing-subline">No hidden fees. Pricing is based on property size and service type. Contact us for a custom quote.</p>
-      <div class="pricing-table-wrap">
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Service</th>
-              <th>Studio / 1BR</th>
-              <th>2BR</th>
-              <th>3BR</th>
-              <th>4BR+</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Standard Turnover</strong></td>
-              <td>From €75</td>
-              <td>From €100</td>
-              <td>From €130</td>
-              <td>Custom</td>
-            </tr>
-            <tr class="row-alt">
-              <td><strong>Deep Clean</strong></td>
-              <td>From €150</td>
-              <td>From €200</td>
-              <td>From €260</td>
-              <td>Custom</td>
-            </tr>
-            <tr>
-              <td><strong>Linen Service</strong> <span class="add-on">add-on</span></td>
-              <td>+ €25</td>
-              <td>+ €35</td>
-              <td>+ €45</td>
-              <td>Custom</td>
-            </tr>
-          </tbody>
-        </table>
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section">
+    <div class="section-label">Transparent pricing</div>
+    <h2>No surprises. Ever.</h2>
+    <p class="section-sub">Flat-rate pricing per turnover. You always know what you're paying before we show up.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">Studio / 1BR</div>
+        <div class="price-name">Essential</div>
+        <div class="price-desc">Perfect for compact listings</div>
+        <div class="price-from">From</div>
+        <div class="price-amount">€65</div>
+        <div class="price-unit">per turnover</div>
+        <ul class="price-features">
+          <li>Full turnover clean</li>
+          <li>Photo check-out report</li>
+          <li>Trash removal</li>
+          <li>Same-day availability</li>
+        </ul>
+        <a href="quote.html" class="btn-price btn-price-outline">Get started</a>
       </div>
-      <p class="pricing-note-text">Prices vary based on property condition and location. Multi-property discounts available. First clean? <strong>Ask about our introductory rate.</strong></p>
-      <div class="pricing-cta-row">
-        <a href="#contact" class="btn-primary">Request a custom quote →</a>
+
+      <div class="price-card featured">
+        <div class="featured-tag">Most popular</div>
+        <div class="price-tier">2 Bedroom</div>
+        <div class="price-name">Full Service</div>
+        <div class="price-desc">Ideal for standard Airbnb listings</div>
+        <div class="price-from">From</div>
+        <div class="price-amount">€95</div>
+        <div class="price-unit">per turnover</div>
+        <ul class="price-features">
+          <li>Full turnover clean</li>
+          <li>Photo check-out report</li>
+          <li>Linen change & hotel fold</li>
+          <li>Restocking essentials</li>
+          <li>Priority scheduling</li>
+        </ul>
+        <a href="quote.html" class="btn-price btn-price-solid">Get started</a>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-label centered">FAQ</div>
-      <h2 class="section-title centered">Common questions</h2>
-      <div class="faq-grid">
-
-        <div class="faq-item">
-          <h4>Do you work with all booking platforms?</h4>
-          <p>Yes! Airbnb, VRBO, Booking.com, direct bookings, and more. We can sync with any compatible calendar.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>What if I need to cancel or reschedule?</h4>
-          <p>We ask for at least 12 hours' notice when possible. We understand the nature of short-term rentals and try to be as flexible as possible.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Do I need to be present during the clean?</h4>
-          <p>Not at all. Most of our hosts give us a lockbox or keypad code. We handle everything and send you a photo report when we're done.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>What supplies do you bring?</h4>
-          <p>We bring all professional-grade cleaning supplies and equipment. If you have preferred products or specific requirements, just let us know.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Can I book recurring cleans on a set schedule?</h4>
-          <p>Yes, and we recommend it. Regular clients get priority scheduling and preferred rates.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Are you insured?</h4>
-          <p>Yes. We carry full general liability insurance and all staff are background-checked.</p>
-        </div>
-
+      <div class="price-card">
+        <div class="price-tier">3BR+</div>
+        <div class="price-name">Premium</div>
+        <div class="price-desc">For larger properties & portfolios</div>
+        <div class="price-from">From</div>
+        <div class="price-amount">€140</div>
+        <div class="price-unit">per turnover</div>
+        <ul class="price-features">
+          <li>Full turnover clean</li>
+          <li>Photo check-out report</li>
+          <li>Full linen service</li>
+          <li>Full restocking</li>
+          <li>Dedicated team lead</li>
+          <li>Volume discounts available</li>
+        </ul>
+        <a href="quote.html" class="btn-price btn-price-outline">Get a quote</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT / CTA -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-label centered">Get in Touch</div>
-      <h2 class="section-title centered">Ready to take cleaning off your plate?</h2>
-      <p class="contact-subline">Join dozens of local hosts who never stress about turnovers anymore. Get a free, no-obligation quote today.</p>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <div class="contact-label">Service Area</div>
-              <div class="contact-value">Serving Porto</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <div class="contact-label">Phone &amp; WhatsApp</div>
-              <a href="tel:+351911770703" class="contact-value">+351 91 177 0703</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <div class="contact-label">Email</div>
-              <div class="contact-value">hello@kleenbnb.pt</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">⏰</div>
-            <div>
-              <div class="contact-label">Availability</div>
-              <div class="contact-value">Available 7 days a week</div>
-            </div>
-          </div>
-          <a href="https://wa.me/351911770703" class="btn-whatsapp">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            Message us on WhatsApp
-          </a>
-        </div>
-        <form class="contact-form" onsubmit="return false;">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c-name">Name</label>
-              <input type="text" id="c-name" placeholder="Your name" />
-            </div>
-            <div class="form-group">
-              <label for="c-email">Email</label>
-              <input type="email" id="c-email" placeholder="your@email.com" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="c-phone">Phone</label>
-              <input type="tel" id="c-phone" placeholder="+351 900 000 000" />
-            </div>
-            <div class="form-group">
-              <label for="c-properties">Number of properties</label>
-              <select id="c-properties">
-                <option value="">Select...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4+</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="c-size">Average property size</label>
-            <select id="c-size">
-              <option value="">Select property size</option>
-              <option>Studio</option>
-              <option>1 Bedroom</option>
-              <option>2 Bedrooms</option>
-              <option>3 Bedrooms</option>
-              <option>4+ Bedrooms</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="c-message">Message</label>
-            <textarea id="c-message" rows="4" placeholder="Tell us about your property or ask a question..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-full">Send my free quote request →</button>
-        </form>
-      </div>
+<!-- FAQ -->
+<div class="faq-wrap" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-label">FAQ</div>
+      <h2>Questions hosts ask us.</h2>
+      <p class="section-sub">Everything you need to know before getting started.</p>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="#home" class="logo">
-            <span class="logo-icon">✦</span>
-            <span class="logo-text">KleenBNB</span>
-          </a>
-          <div class="footer-tagline">KleenBNB — The Cleaning Partner Every Airbnb Host Needs.</div>
-        </div>
-        <div class="footer-nav">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#why">Why us</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-          <a href="#faq">FAQ</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Instagram" class="social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="#" aria-label="Facebook" class="social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="#" aria-label="Google Business" class="social-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
-          </a>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How quickly can you turn over a property?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Most properties are ready within 2–4 hours of guest checkout, depending on size. Studios and 1-bedrooms are typically done in under 2 hours. We work within your checkout-to-check-in window and will always confirm timing upfront.</p>
         </div>
       </div>
-      <div class="footer-bottom">© 2025 KleenBNB. All rights reserved. Porto, Portugal.</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What areas of Porto do you cover?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We cover Porto city centre and all key Airbnb neighbourhoods including Ribeira, Bonfim, Cedofeita, Miragaia, Foz, and Boavista. Not sure if we cover your area? Just ask — we'll let you know.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do I need to be present during the clean?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Not at all. Most of our hosts are hands-off entirely. We work with lockboxes, key safes, or smart locks. Just make sure we have access instructions and we handle the rest. You'll receive photos the moment we're done so you can see the property remotely.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What's included in the photo check-out report?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Every room, every surface — kitchen counters, stovetop, bathrooms, made beds, living areas, and all trash cans. We also photograph any pre-existing damage we notice so you're protected from false claims. Reports are sent directly after every clean.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can you handle last-minute or same-day bookings?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>Yes — it's one of the things we built KleenBNB specifically to handle. Same-day turnovers are available (subject to scheduling), with a small surcharge. Regular clients get priority slots, which means you're always first in the queue when things get tight.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you supply cleaning products and linens?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We supply all cleaning products and equipment. Linens can go either way — we can use yours or manage the full linen service (collection, laundering, and restocking fresh sets) as an add-on. We'll set this up during onboarding based on your preference.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What happens if something is damaged or missing?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We document the property's condition on arrival before touching anything, and again after cleaning. If something is damaged during our clean, we'll tell you immediately and take responsibility. Our photo record also protects you against guests claiming damage that was already there.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How does billing work?</span>
+          <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </button>
+        <div class="faq-a">
+          <p>We invoice per turnover at the flat rates listed in our pricing section. For regular clients we offer weekly or monthly invoicing — whatever is easier for you. No surprise charges. If anything extra comes up (like a particularly heavy deep clean), we'll always confirm cost before proceeding.</p>
+        </div>
+      </div>
+
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active');
-    });
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('active');
-    }
-  </script>
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="color: var(--teal-light); margin-bottom: 16px;">Ready to start?</div>
+    <h2>Your next guest should walk into a 5-star clean.</h2>
+    <p>Get a free quote in under 24 hours. First turnover at 50% off — no strings attached.</p>
+    <div class="cta-btns">
+      <a href="quote.html" class="btn-primary">Get a free quote</a>
+      <a href="tel:+351911770703" class="btn-ghost" style="color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2);">+351 91 177 0703</a>
+    </div>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Kleen<span>BNB</span></div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 KleenBNB · Porto, Portugal</div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
 </body>
 </html>
