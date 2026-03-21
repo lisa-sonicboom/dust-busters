@@ -225,7 +225,7 @@
     grid-template-rows: 1fr 1fr;
     gap: 2px;
     width: 360px;
-    height: 360px;
+    height: 300px;
     position: relative;
     z-index: 1;
     animation: fadeUp 0.8s 0.4s ease both;
@@ -233,14 +233,13 @@
 
   .stat-card {
     background: rgba(255,255,255,0.06);
-    padding: 24px;
+    padding: 16px 24px;
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,0.08);
     transition: background 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    aspect-ratio: 1;
   }
   .stat-card:first-child { border-radius: 16px 0 0 0; }
   .stat-card:nth-child(2) { border-radius: 0 16px 0 0; }
@@ -839,25 +838,140 @@
     color: rgba(255,255,255,0.2);
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 18px 24px; }
-    .nav-links { gap: 20px; }
+  /* ── HAMBURGER ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--mid);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── TABLET (max 1024px) ── */
+  @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 100px 32px 60px; min-height: 80vh; }
-    .hero-right { padding: 60px 32px; min-height: 50vh; }
-    .section { padding: 72px 24px; }
-    .services-wrap { padding: 72px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .hero-left { padding: 110px 48px 60px; min-height: auto; }
+    .hero-right { padding: 60px 48px 80px; min-height: auto; justify-content: center; }
+    .stat-grid { width: 100%; max-width: 480px; height: auto; grid-template-rows: auto; }
+    .stat-card { aspect-ratio: 1; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); gap: 48px 32px; }
     .process-grid::before { display: none; }
-    .testimonial-wrap { padding: 72px 24px; }
     .testimonial-inner { grid-template-columns: 1fr; gap: 40px; }
-    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
-    .faq-wrap { padding: 72px 24px; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
     .faq-inner { grid-template-columns: 1fr; gap: 40px; }
     .faq-header { position: static; }
+  }
+
+  /* ── MOBILE (max 768px) ── */
+  @media (max-width: 768px) {
+    /* Nav */
+    nav { padding: 16px 24px; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 61px; left: 0; right: 0;
+      background: rgba(250,249,246,0.98);
+      backdrop-filter: blur(12px);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 12px 0 20px;
+      border-bottom: 1px solid rgba(10,147,150,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 14px 24px;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .nav-cta {
+      margin: 12px 24px 0;
+      text-align: center;
+      border-radius: 8px !important;
+      padding: 14px 24px !important;
+    }
+
+    /* Hero */
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 96px 24px 52px; }
+    h1 { font-size: clamp(2.2rem, 8vw, 3rem); letter-spacing: -1px; }
+    .hero-sub { font-size: 1rem; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-ghost { text-align: center; }
+    .hero-right { padding: 48px 24px 60px; }
+    .stat-grid { width: 100%; max-width: 100%; height: auto; }
+    .stat-card { aspect-ratio: 1; padding: 16px; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-label { font-size: 0.75rem; }
+
+    /* Trust strip */
+    .trust-strip { padding: 20px 24px; }
+    .trust-inner { gap: 16px; justify-content: flex-start; }
+    .trust-item { font-size: 0.82rem; }
+
+    /* Services */
+    .services-wrap { padding: 72px 24px; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+
+    /* How it works */
+    .section { padding: 72px 24px; }
+    .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    .process-step { padding: 0; }
+
+    /* Testimonials */
+    .testimonial-wrap { padding: 72px 24px; }
+    .testimonial-inner { grid-template-columns: 1fr; gap: 32px; }
+
+    /* Pricing */
+    .pricing-grid { grid-template-columns: 1fr; max-width: 100%; margin-top: 40px; }
+
+    /* FAQ */
+    .faq-wrap { padding: 72px 24px; }
+    .faq-inner { grid-template-columns: 1fr; gap: 32px; }
+    .faq-header { position: static; }
+    .faq-q { padding: 20px 20px; font-size: 0.93rem; }
+    .faq-a p { padding: 0 20px 20px 20px; }
+
+    /* CTA */
     .cta-section { padding: 72px 24px; }
-    footer { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
-    h1 { letter-spacing: -1px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+
+    /* Footer */
+    footer { padding: 36px 24px; flex-direction: column; align-items: flex-start; gap: 20px; }
+    .footer-links { flex-wrap: wrap; gap: 16px; }
+
+    /* Section headings */
+    h2 { font-size: clamp(1.7rem, 6vw, 2.4rem); }
+    .section-sub { font-size: 0.95rem; }
+  }
+
+  /* ── SMALL MOBILE (max 420px) ── */
+  @media (max-width: 420px) {
+    .hero-left { padding: 88px 20px 48px; }
+    .hero-right { padding: 40px 20px 52px; }
+    .stat-number { font-size: 1.5rem; }
+    .stat-label { font-size: 0.7rem; }
+    .services-wrap { padding: 60px 20px; }
+    .section { padding: 60px 20px; }
+    .testimonial-wrap { padding: 60px 20px; }
+    .faq-wrap { padding: 60px 20px; }
+    .cta-section { padding: 60px 20px; }
+    footer { padding: 32px 20px; }
+    .offer-badge { font-size: 0.72rem; }
   }
