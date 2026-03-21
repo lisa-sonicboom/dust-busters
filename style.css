@@ -833,6 +833,19 @@
   }
   .footer-links a:hover { color: var(--teal-light); }
 
+  .footer-legal {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-legal a {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: var(--teal-light); }
+
   .footer-copy {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.2);
@@ -955,6 +968,7 @@
     /* Footer */
     footer { padding: 36px 24px; flex-direction: column; align-items: flex-start; gap: 20px; }
     .footer-links { flex-wrap: wrap; gap: 16px; }
+    .footer-legal { flex-wrap: wrap; gap: 16px; }
 
     /* Section headings */
     h2 { font-size: clamp(1.7rem, 6vw, 2.4rem); }
