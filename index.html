@@ -11,11 +11,14 @@
 <!-- NAV -->
 <nav>
   <div class="logo">Kleen<span>BNB</span></div>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+  <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#services" onclick="closeNav()">Services</a>
+    <a href="#how" onclick="closeNav()">How it works</a>
+    <a href="#pricing" onclick="closeNav()">Pricing</a>
+    <a href="#faq" onclick="closeNav()">FAQ</a>
     <a href="quote.html" class="nav-cta">Get a quote</a>
   </div>
 </nav>
@@ -350,6 +353,16 @@ function toggleFaq(btn) {
   const isOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
+}
+
+function toggleNav(btn) {
+  btn.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function closeNav() {
+  document.querySelector('.nav-toggle').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
 }
 </script>
 </body>
