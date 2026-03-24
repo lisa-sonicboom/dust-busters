@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Pricing — KleenBNB</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .services-page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 140px 48px 100px;
+  }
+
+  .services-page .section-label { margin-bottom: 14px; }
+
+  .services-page h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+    margin-bottom: 12px;
+    animation: none;
+  }
+
+  .page-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  /* ── SERVICE BLOCK ── */
+  .service-block {
+    margin-bottom: 64px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .service-block:last-of-type { border-bottom: none; }
+
+  .service-block-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .service-block-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .service-block-desc {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 540px;
+  }
+
+  .service-block-price {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .sbp-from {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 2px;
+  }
+
+  .sbp-amount {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--teal-dark);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .sbp-unit {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* ── INCLUDES TABLE ── */
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+    margin-top: 20px;
+  }
+
+  .includes-grid.single { grid-template-columns: 1fr; }
+
+  .include-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .include-item::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 0.85rem;
+  }
+
+  .include-item.extra::before { content: '+'; color: var(--teal-dark); }
+
+  .ideal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    background: rgba(10,147,150,0.07);
+    border: 1px solid rgba(10,147,150,0.18);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    color: var(--teal-dark);
+    font-weight: 500;
+  }
+
+  /* ── ADD-ONS TABLE ── */
+  .addons-section { margin-bottom: 64px; }
+
+  .addons-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+  }
+
+  .addons-section p {
+    font-size: 0.93rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .addons-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .addons-table th {
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 16px;
+    border-bottom: 2px solid #e8e8e8;
+  }
+
+  .addons-table td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 300;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .addons-table tr:last-child td { border-bottom: none; }
+  .addons-table tr:hover td { background: rgba(10,147,150,0.03); }
+
+  .addons-table td:last-child {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--teal-dark);
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .addons-table td:nth-child(2) {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* ── SIZE RATES ── */
+  .rates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .rate-card {
+    background: var(--dark);
+    padding: 24px 20px;
+    border-radius: 0;
+  }
+  .rate-card:first-child { border-radius: 12px 0 0 12px; }
+  .rate-card:last-child { border-radius: 0 12px 12px 0; }
+
+  .rate-size {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 10px;
+  }
+
+  .rate-price {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .rate-note {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* ── CTA STRIP ── */
+  .services-cta {
+    background: var(--teal-dark);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 64px;
+  }
+
+  .services-cta h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+
+  .services-cta p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: #e8e8e8;
+    margin: 64px 0;
+  }
+
+  @media (max-width: 768px) {
+    .services-page { padding: 110px 24px 80px; }
+    .service-block-header { flex-direction: column; gap: 16px; }
+    .service-block-price { text-align: left; }
+    .includes-grid { grid-template-columns: 1fr; }
+    .rates-grid { grid-template-columns: 1fr 1fr; }
+    .rate-card:first-child { border-radius: 12px 0 0 0; }
+    .rate-card:nth-child(2) { border-radius: 0 12px 0 0; }
+    .rate-card:nth-child(3) { border-radius: 0 0 0 12px; }
+    .rate-card:last-child { border-radius: 0 0 12px 0; }
+    .services-cta { padding: 32px 24px; }
+    .addons-table th:nth-child(2), .addons-table td:nth-child(2) { display: none; }
+  }
+  @media (max-width: 420px) {
+    .services-page { padding: 96px 20px 64px; }
+    .rates-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:var(--teal-dark);">Kleen<span style="color:var(--teal);">BNB</span></a></div>
+  <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="quote.html" class="nav-cta">Get a quote</a>
+  </div>
+</nav>
+
+<div class="services-page">
+
+  <div class="section-label">What we offer</div>
+  <h1>Full Services & Pricing</h1>
+  <p class="page-sub">Everything we do, laid out clearly. All prices are flat-rate and quoted in euros including tax. Final price depends on property size — get a free tailored quote in under 24 hours.</p>
+
+  <!-- ── TURNOVER SERVICES ── -->
+  <div class="service-block">
+    <div class="service-block-header">
+      <div>
+        <div class="service-block-title">Essential Turnover</div>
+        <div class="service-block-desc">A full, reliable clean between guest stays — timed to your checkout and check-in window. Same-day availability as standard.</div>
+      </div>
+      <div class="service-block-price">
+        <div class="sbp-from">From</div>
+        <div class="sbp-amount">€65</div>
+        <div class="sbp-unit">per turnover</div>
+      </div>
+    </div>
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-size">Studio / 1BR</div>
+        <div class="rate-price">€65</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">2 Bedroom</div>
+        <div class="rate-price">€85</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">3 Bedroom</div>
+        <div class="rate-price">€110</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">4BR+</div>
+        <div class="rate-price">POA</div>
+        <div class="rate-note">custom quote</div>
+      </div>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item">Full clean of all rooms</div>
+      <div class="include-item">Linen change & hotel fold</div>
+      <div class="include-item">Bathroom deep clean & sanitise</div>
+      <div class="include-item">Kitchen clean & appliance wipe-down</div>
+      <div class="include-item">Trash removal & bag replacement</div>
+      <div class="include-item">Photo check-out report</div>
+      <div class="include-item">Floors vacuumed & mopped</div>
+      <div class="include-item">Same-day availability</div>
+    </div>
+    <div class="ideal-tag">💡 Ideal for: all standard Airbnb hosts</div>
+  </div>
+
+  <!-- ── FULL SERVICE ── -->
+  <div class="service-block">
+    <div class="service-block-header">
+      <div>
+        <div class="service-block-title">Full Service Turnover</div>
+        <div class="service-block-desc">Everything in the Essential, plus consumables restocking and priority scheduling. Our most popular option for active hosts.</div>
+      </div>
+      <div class="service-block-price">
+        <div class="sbp-from">From</div>
+        <div class="sbp-amount">€95</div>
+        <div class="sbp-unit">per turnover</div>
+      </div>
+    </div>
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-size">Studio / 1BR</div>
+        <div class="rate-price">€95</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">2 Bedroom</div>
+        <div class="rate-price">€125</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">3 Bedroom</div>
+        <div class="rate-price">€155</div>
+        <div class="rate-note">per turnover</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">4BR+</div>
+        <div class="rate-price">POA</div>
+        <div class="rate-note">custom quote</div>
+      </div>
+    </div>
+    <div class="includes-grid">
+      <div class="include-item">Everything in Essential Turnover</div>
+      <div class="include-item">Linen change & hotel fold</div>
+      <div class="include-item">Consumables restock (toiletries, paper products)</div>
+      <div class="include-item">Kitchen supplies restock</div>
+      <div class="include-item">Priority scheduling</div>
+      <div class="include-item">Dedicated team lead</div>
+    </div>
+    <div class="ideal-tag">💡 Ideal for: Superhosts & hosts with multiple properties</div>
+  </div>
+
+  <!-- ── DEEP CLEAN ── -->
+  <div class="service-block">
+    <div class="service-block-header">
+      <div>
+        <div class="service-block-title">Deep Clean</div>
+        <div class="service-block-desc">A thorough reset of your property. Perfect after long stays, end of season, or whenever your place needs a full refresh.</div>
+      </div>
+      <div class="service-block-price">
+        <div class="sbp-from">From</div>
+        <div class="sbp-amount">€150</div>
+        <div class="sbp-unit">per clean</div>
+      </div>
+    </div>
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-size">Studio / 1BR</div>
+        <div class="rate-price">€150</div>
+        <div class="rate-note">per clean</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">2 Bedroom</div>
+        <div class="rate-price">€200</div>
+        <div class="rate-note">per clean</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">3 Bedroom</div>
+        <div class="rate-price">€260</div>
+        <div class="rate-note">per clean</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-size">4BR+</div>
+        <div class="rate-price">POA</div>
+        <div class="rate-note">custom quote</div>
+      </div>
+    </div>
+    <p style="font-size:0.88rem;color:var(--muted);font-weight:300;margin:16px 0 8px;">Covers everything in the Standard clean, plus:</p>
+    <div class="includes-grid">
+      <div class="include-item extra">Inside oven, fridge, microwave & other appliances</div>
+      <div class="include-item extra">Baseboards</div>
+      <div class="include-item extra">Window sills, tracks & frames</div>
+      <div class="include-item extra">Behind furniture & appliances</div>
+      <div class="include-item extra">Vents & other hard-to-reach areas</div>
+      <div class="include-item extra">Grout & tile deep scrub</div>
+    </div>
+    <div class="ideal-tag">💡 Ideal for: new listings, seasonal resets, post-long-stay</div>
+  </div>
+
+  <!-- ── ADD-ONS ── -->
+  <div class="addons-section">
+    <h2>Add-ons & Surcharges</h2>
+    <p>Add any of the following to any standard turnover booking. Prices are per visit unless stated.</p>
+
+    <table class="addons-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Details</th>
+          <th style="text-align:right;">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Linen service — full cycle</td>
+          <td>Collection, laundering & restocking of all linens</td>
+          <td>+€20–€40</td>
+        </tr>
+        <tr>
+          <td>Consumables restock</td>
+          <td>Toiletries, paper products & kitchen supplies (cost of items not included)</td>
+          <td>+€15–€25</td>
+        </tr>
+        <tr>
+          <td>Same-day / express booking</td>
+          <td>Bookings made with less than 4 hours' notice</td>
+          <td>+€30–€50</td>
+        </tr>
+        <tr>
+          <td>Last-minute booking</td>
+          <td>Bookings made with less than 24 hours' notice</td>
+          <td>+€15–€25</td>
+        </tr>
+        <tr>
+          <td>On-site laundry</td>
+          <td>Washing & drying linens on-site (per load)</td>
+          <td>+€15/load</td>
+        </tr>
+        <tr>
+          <td>Post-checkout inspection report</td>
+          <td>Detailed written report with photos — included free in all plans</td>
+          <td>Included</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── VOLUME ── -->
+  <div class="addons-section">
+    <h2>Volume & Portfolio Rates</h2>
+    <p>Managing multiple properties? We offer discounted rates for hosts with 3 or more listings. Get in touch for a custom quote.</p>
+    <table class="addons-table">
+      <thead>
+        <tr>
+          <th>Portfolio size</th>
+          <th>Details</th>
+          <th style="text-align:right;">Discount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3–5 properties</td>
+          <td>Fixed monthly invoicing available</td>
+          <td>5% off</td>
+        </tr>
+        <tr>
+          <td>6–10 properties</td>
+          <td>Dedicated team lead + priority slots</td>
+          <td>10% off</td>
+        </tr>
+        <tr>
+          <td>10+ properties</td>
+          <td>Custom agreement, dedicated account manager</td>
+          <td>Custom</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="services-cta">
+    <div>
+      <h3>Ready to get started?</h3>
+      <p>Tell us about your property and we'll send you a tailored quote within 24 hours — first turnover 50% off.</p>
+    </div>
+    <a href="quote.html" class="btn-primary" style="white-space:nowrap;text-decoration:none;">Get a free quote →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">Kleen<span>BNB</span></a></div>
+  <div class="footer-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#how">How it works</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+  </div>
+  <div class="footer-legal">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+  </div>
+  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:info@kleenbnb.pt" style="color:inherit;">info@kleenbnb.pt</a></div>
+</footer>
+
+<script>
+function toggleNav(btn) {
+  btn.classList.toggle('open');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+</body>
+</html>
