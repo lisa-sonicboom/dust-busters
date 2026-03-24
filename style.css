@@ -657,6 +657,21 @@
   }
   .btn-price-solid:hover { background: white; }
 
+  .pricing-footnote {
+    margin-top: 36px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .pricing-footnote a {
+    color: var(--teal);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .pricing-footnote a:hover { text-decoration: underline; }
+
   /* ── FAQ ── */
   .faq-wrap {
     background: #005f73;
