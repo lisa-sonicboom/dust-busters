@@ -419,7 +419,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">Kleen<span>BNB</span></a></div>
+  <div class="logo"><a href="index.html" style="text-decoration:none;color:var(--teal-dark);">Kleen<span style="color:var(--teal);">BNB</span></a></div>
   <button class="nav-toggle" onclick="toggleNav(this)" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -440,7 +440,7 @@
     <div class="quote-left-content">
       <div class="offer-badge">Limited offer</div>
       <h1>Your first turnover<br><em>50% off.</em></h1>
-      <p>Tell us about your property and we'll send you a tailored quote within 24 hours, plus your exclusive first-clean discount, no strings attached.</p>
+      <p>Tell us about your property and we'll send you a tailored quote within 24 hours — plus your exclusive first-clean discount, no strings attached.</p>
 
       <div class="offer-box">
         <div class="offer-icon">🏷️</div>
@@ -470,33 +470,33 @@
 
         <div class="form-group">
           <label for="firstName">First name</label>
-          <input type="text" id="firstName" placeholder="Sofia" />
+          <input type="text" id="firstName" name="First name" placeholder="Sofia" />
         </div>
 
         <div class="form-group">
           <label for="lastName">Last name</label>
-          <input type="text" id="lastName" placeholder="Martins" />
+          <input type="text" id="lastName" name="Last name" placeholder="Martins" />
         </div>
 
         <div class="form-group full">
           <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="sofia@example.com" />
+          <input type="email" id="email" name="Email" placeholder="sofia@example.com" />
         </div>
 
         <div class="form-group full">
           <label for="phone">Phone number</label>
-          <input type="tel" id="phone" placeholder="+351 912 345 678" />
+          <input type="tel" id="phone" name="Phone" placeholder="+351 912 345 678" />
         </div>
 
         <div class="form-group full">
           <label for="propertyAddress">Property address / neighbourhood</label>
-          <input type="text" id="propertyAddress" placeholder="Rua de Santa Catarina, Bonfim..." />
+          <input type="text" id="propertyAddress" name="Property address" placeholder="Rua de Santa Catarina, Bonfim..." />
         </div>
 
         <div class="form-group">
           <label for="propertySize">Property size</label>
           <div class="select-wrap">
-            <select id="propertySize">
+            <select id="propertySize" name="Property size">
               <option value="" disabled selected>Select size</option>
               <option>Studio / 1 bedroom</option>
               <option>2 bedrooms</option>
@@ -509,7 +509,7 @@
         <div class="form-group">
           <label for="frequency">How often?</label>
           <div class="select-wrap">
-            <select id="frequency">
+            <select id="frequency" name="Frequency">
               <option value="" disabled selected>Select frequency</option>
               <option>A few times a month</option>
               <option>Weekly</option>
@@ -526,19 +526,19 @@
           <label>Services needed</label>
           <div class="checkbox-group">
             <label class="checkbox-item">
-              <input type="checkbox" checked />
+              <input type="checkbox" name="Services" value="Turnover cleaning" checked />
               <span>Turnover cleaning</span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" />
+              <input type="checkbox" name="Services" value="Linen service" />
               <span>Linen service (collection, laundering & restocking)</span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" />
+              <input type="checkbox" name="Services" value="Consumables restocking" />
               <span>Consumables restocking (toiletries, paper products, etc.)</span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" />
+              <input type="checkbox" name="Services" value="Deep clean" />
               <span>Deep clean (first-time or seasonal)</span>
             </label>
           </div>
@@ -546,12 +546,13 @@
 
         <div class="form-group full">
           <label for="message">Anything else we should know? <span style="font-size:0.75rem;color:#b0b8c0;text-transform:none;letter-spacing:0;">(optional)</span></label>
-          <textarea id="message" placeholder="e.g. I have 3 listings, guests check out at 11am, I need same-day turnarounds..."></textarea>
+          <textarea id="message" name="Message" placeholder="e.g. I have 3 listings, guests check out at 11am, I need same-day turnarounds..."></textarea>
         </div>
 
-        <button class="submit-btn" onclick="submitForm()">Send my quote request →</button>
+        <button class="submit-btn" id="submitBtn" onclick="submitForm()">Send my quote request →</button>
 
-        <div class="form-note">We'll reply to your email within 24 hours. Your details are never shared.<br>By submitting this form you agree to our <a href="privacy.html" style="color:var(--teal);text-decoration:underline;">Privacy Policy</a>.</div>
+        <div class="form-note" id="formNote">We'll reply to your email within 24 hours. Your details are never shared.<br>By submitting this form you agree to our <a href="privacy.html" style="color:var(--teal);text-decoration:underline;">Privacy Policy</a>.</div>
+        <div class="form-note" id="errorNote" style="display:none;color:#c0392b;"></div>
 
       </div>
     </div>
@@ -583,14 +584,17 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms & Conditions</a>
   </div>
-  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:info@kleenbnb.pt" style="color:inherit;">info@kleenbnb.pt</a></div>
+  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:booking@kleenbnb.com" style="color:inherit;">booking@kleenbnb.com</a></div>
 </footer>
 
 <script>
-function submitForm() {
+async function submitForm() {
   const firstName = document.getElementById('firstName').value.trim();
   const email = document.getElementById('email').value.trim();
+  const btn = document.getElementById('submitBtn');
+  const errorNote = document.getElementById('errorNote');
 
+  // Basic validation
   if (!firstName) {
     document.getElementById('firstName').focus();
     document.getElementById('firstName').style.borderColor = '#e55';
@@ -602,9 +606,48 @@ function submitForm() {
     return;
   }
 
-  document.getElementById('formWrap').style.display = 'none';
-  document.getElementById('successState').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Collect checked services
+  const services = [...document.querySelectorAll('input[name="Services"]:checked')]
+    .map(cb => cb.value).join(', ') || 'None selected';
+
+  // Build payload
+  const payload = {
+    'First name':       firstName,
+    'Last name':        document.getElementById('lastName').value.trim(),
+    'Email':            email,
+    'Phone':            document.getElementById('phone').value.trim(),
+    'Property address': document.getElementById('propertyAddress').value.trim(),
+    'Property size':    document.getElementById('propertySize').value,
+    'Frequency':        document.getElementById('frequency').value,
+    'Services needed':  services,
+    'Message':          document.getElementById('message').value.trim(),
+  };
+
+  // Loading state
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  errorNote.style.display = 'none';
+
+  try {
+    const res = await fetch('https://formspree.io/f/xykbkzgo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('successState').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Send my quote request →';
+    errorNote.style.display = 'block';
+    errorNote.textContent = 'Something went wrong — please try again or email us directly at booking@kleenbnb.com';
+  }
 }
 
 document.querySelectorAll('input, select, textarea').forEach(el => {
