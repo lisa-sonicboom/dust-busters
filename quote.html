@@ -214,7 +214,7 @@
     color: var(--mid);
   }
 
-  input, select, textarea {
+  input:not([type="checkbox"]), select, textarea {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.93rem;
     font-weight: 400;
@@ -231,7 +231,7 @@
 
   input::placeholder, textarea::placeholder { color: #b0b8c0; }
 
-  input:focus, select:focus, textarea:focus {
+  input:not([type="checkbox"]):focus, select:focus, textarea:focus {
     border-color: var(--teal);
     box-shadow: 0 0 0 3px rgba(10,147,150,0.1);
   }
@@ -584,7 +584,7 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms & Conditions</a>
   </div>
-  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:booking@kleenbnb.com" style="color:inherit;">booking@kleenbnb.com</a></div>
+  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:info@kleenbnb.pt" style="color:inherit;">info@kleenbnb.pt</a></div>
 </footer>
 
 <script>
@@ -629,7 +629,7 @@ async function submitForm() {
   errorNote.style.display = 'none';
 
   try {
-    const res = await fetch('https://formspree.io/f/xykbkzgo', {
+    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
@@ -646,7 +646,7 @@ async function submitForm() {
     btn.disabled = false;
     btn.textContent = 'Send my quote request →';
     errorNote.style.display = 'block';
-    errorNote.textContent = 'Something went wrong — please try again or email us directly at booking@kleenbnb.com';
+    errorNote.textContent = 'Something went wrong — please try again or email us directly at info@kleenbnb.pt';
   }
 }
 
