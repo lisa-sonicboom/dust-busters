@@ -584,7 +584,7 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms & Conditions</a>
   </div>
-  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:info@kleenbnb.pt" style="color:inherit;">info@kleenbnb.pt</a></div>
+  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:kleencrew@kleenbnb.com" style="color:inherit;">kleencrew@kleenbnb.com</a></div>
 </footer>
 
 <script>
@@ -629,7 +629,7 @@ async function submitForm() {
   errorNote.style.display = 'none';
 
   try {
-    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    const res = await fetch('https://formspree.io/f/xykbkzgo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
@@ -646,7 +646,7 @@ async function submitForm() {
     btn.disabled = false;
     btn.textContent = 'Send my quote request →';
     errorNote.style.display = 'block';
-    errorNote.textContent = 'Something went wrong — please try again or email us directly at info@kleenbnb.pt';
+    errorNote.textContent = 'Something went wrong — please try again or email us directly at kleencrew@kleenbnb.com';
   }
 }
 
