@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partnership Proposal — KleenBNB Crew</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #001219;
+    --teal: #0a9396;
+    --teal-dark: #005f73;
+    --teal-light: #94d2bd;
+    --cream: #faf9f6;
+    --sand: #e9d8a6;
+    --mid: #1a3a4a;
+    --text: #2c3e50;
+    --muted: #6c7a84;
+    --border: #e4e8ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f7f9;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  .pm-header {
+    background: var(--dark);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pm-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -55deg, transparent, transparent 60px,
+      rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px
+    );
+  }
+
+  .pm-header::after {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(10,147,150,0.18) 0%, transparent 65%);
+    top: -300px; right: -200px;
+    pointer-events: none;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+  .header-logo span { color: var(--teal); }
+
+  .proposal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10,147,150,0.15);
+    border: 1px solid rgba(10,147,150,0.3);
+    color: var(--teal-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .pm-header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1.5px;
+    line-height: 1.07;
+    margin-bottom: 16px;
+  }
+
+  .pm-header h1 em {
+    font-style: normal;
+    color: var(--teal-light);
+  }
+
+  .pm-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  .header-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 32px 28px;
+    min-width: 220px;
+    backdrop-filter: blur(8px);
+  }
+
+  .header-card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+  }
+
+  .header-card-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+  .header-card-item:last-child { margin-bottom: 0; }
+
+  .hci-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* ── PAGE BODY ── */
+  .pm-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 48px 100px;
+  }
+
+  /* ── SECTION TITLES ── */
+  .pm-section { margin-bottom: 64px; }
+
+  .pm-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  .pm-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.6px;
+    margin-bottom: 8px;
+  }
+
+  .pm-section-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 36px;
+  }
+
+  /* ── SERVICES GRID ── */
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-tile {
+    background: white;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-tile::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-tile:first-child { border-radius: 12px 0 0 0; }
+  .service-tile:nth-child(3) { border-radius: 0 12px 0 0; }
+  .service-tile:nth-child(4) { border-radius: 0 0 0 12px; }
+  .service-tile:last-child { border-radius: 0 0 12px 0; }
+
+  .service-tile:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+  .service-tile:hover::after { transform: scaleX(1); }
+
+  .service-tile-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(10,147,150,0.12);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .service-tile-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .service-tile-desc {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── WHY US ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .why-card {
+    background: var(--dark);
+    border-radius: 12px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .why-card:hover { transform: translateY(-3px); }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(10,147,150,0.1);
+  }
+
+  .why-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(148,210,189,0.15);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .why-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--teal-light);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .why-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── PRICING ── */
+  .pricing-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .pricing-table-wrap {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .pricing-table-head {
+    background: var(--dark);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pricing-table-head span {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .partner-badge {
+    background: var(--teal);
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .pricing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+  }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row:hover { background: rgba(10,147,150,0.03); }
+
+  .pricing-row-size {
+    font-size: 0.93rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .pricing-row-range {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--teal-dark);
+  }
+
+  .pricing-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pricing-note-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .pnc-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+
+  .pnc-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .pnc-desc {
+    font-size: 0.83rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  /* ── TRIAL ── */
+  .trial-block {
+    background: var(--dark);
+    border-radius: 20px;
+    padding: 56px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trial-block::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(10,147,150,0.12) 0%, transparent 65%);
+    top: -200px; right: -100px;
+    pointer-events: none;
+  }
+
+  .trial-block::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(233,216,166,0.06) 0%, transparent 65%);
+    bottom: -100px; left: 100px;
+    pointer-events: none;
+  }
+
+  .trial-content { position: relative; z-index: 1; }
+
+  .trial-tag {
+    display: inline-block;
+    background: rgba(233,216,166,0.1);
+    border: 1px solid rgba(233,216,166,0.2);
+    color: var(--sand);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .trial-block h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+  }
+
+  .trial-block p {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  .trial-contact {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 28px 32px;
+    min-width: 240px;
+    flex-shrink: 0;
+  }
+
+  .tc-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+  }
+
+  .tc-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .tc-role {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .tc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.87rem;
+  }
+  .tc-item:last-child { margin-bottom: 0; }
+
+  .tc-item a {
+    color: var(--teal-light);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .tc-item a:hover { color: white; }
+
+  .tc-item-icon {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    background: rgba(10,147,150,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* ── DIVIDER ── */
+  .pm-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 0 64px;
+  }
+
+  /* ── FOOTER ── */
+  .pm-footer {
+    background: #000d12;
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .pm-footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+  }
+  .pm-footer-logo span { color: var(--teal); }
+
+  .pm-footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .pm-footer-links a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .pm-footer-links a:hover { color: var(--teal-light); }
+
+  .pm-footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.18);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .proposal-badge { animation: fadeUp 0.5s ease both; }
+  .pm-header h1 { animation: fadeUp 0.5s 0.1s ease both; }
+  .pm-header p { animation: fadeUp 0.5s 0.2s ease both; }
+  .header-card { animation: fadeUp 0.5s 0.3s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .why-grid { grid-template-columns: repeat(3, 1fr); }
+    .pricing-layout { grid-template-columns: 1fr; }
+    .trial-block { grid-template-columns: 1fr; gap: 32px; }
+    .trial-contact { min-width: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .header-inner { grid-template-columns: 1fr; gap: 32px; }
+    .header-inner { padding: 48px 24px; }
+    .pm-body { padding: 48px 24px 80px; }
+    .services-list { grid-template-columns: 1fr 1fr; }
+    .service-tile:nth-child(3) { border-radius: 0; }
+    .service-tile:nth-child(4) { border-radius: 0; }
+    .service-tile:nth-child(5) { border-radius: 0 0 0 12px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .trial-block { padding: 40px 28px; }
+    .pm-footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+    .pm-footer-links { flex-wrap: wrap; gap: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .services-list { grid-template-columns: 1fr; }
+    .service-tile { border-radius: 0 !important; }
+    .service-tile:first-child { border-radius: 12px 12px 0 0 !important; }
+    .service-tile:last-child { border-radius: 0 0 12px 12px !important; }
+    .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="pm-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-logo">Kleen<span>BNB</span> Crew</div>
+      <div class="proposal-badge">Partnership Proposal</div>
+      <h1>Professional cleaning<br>for <em>property managers.</em></h1>
+      <p>We support property management companies in Porto with reliable, high-quality cleaning services designed for fast turnovers and consistent guest experience — at partner rates.</p>
+    </div>
+    <div class="header-card">
+      <div class="header-card-label">What we cover</div>
+      <div class="header-card-item"><div class="hci-dot"></div>Airbnb turnover cleaning</div>
+      <div class="header-card-item"><div class="hci-dot"></div>Same-day & express cleans</div>
+      <div class="header-card-item"><div class="hci-dot"></div>Deep cleaning</div>
+      <div class="header-card-item"><div class="hci-dot"></div>Linen handling & restocking</div>
+      <div class="header-card-item"><div class="hci-dot"></div>Guest supply replenishment</div>
+    </div>
+  </div>
+</header>
+
+<div class="pm-body">
+
+  <!-- SERVICES -->
+  <div class="pm-section">
+    <div class="pm-section-label">Our services</div>
+    <h2>Everything your portfolio needs.</h2>
+    <p class="pm-section-sub">From same-day turnovers to full deep cleans, we handle the full cleaning operation so you can focus on managing your properties.</p>
+
+    <div class="services-list">
+      <div class="service-tile">
+        <div class="service-tile-num">01</div>
+        <div class="service-tile-title">Airbnb / STR Turnover Cleaning</div>
+        <div class="service-tile-desc">Full property clean between guest stays, timed to your check-out and check-in windows. Checklist-based for consistent results every time.</div>
+      </div>
+      <div class="service-tile">
+        <div class="service-tile-num">02</div>
+        <div class="service-tile-title">Same-Day & Express Cleaning</div>
+        <div class="service-tile-desc">Last-minute bookings happen. We're built to handle rapid turnovers without cutting corners — available across the Porto portfolio you manage.</div>
+      </div>
+      <div class="service-tile">
+        <div class="service-tile-num">03</div>
+        <div class="service-tile-title">Deep Cleaning</div>
+        <div class="service-tile-desc">Seasonal resets, post-long-stay cleans, and new listing preparation. Covers appliances, baseboards, grout, behind furniture, vents, and more.</div>
+      </div>
+      <div class="service-tile">
+        <div class="service-tile-num">04</div>
+        <div class="service-tile-title">Linen Handling & Restocking</div>
+        <div class="service-tile-desc">We collect, launder, and restock linens and towels with hotel-quality folding. Managed on a per-property basis to your specification.</div>
+      </div>
+      <div class="service-tile">
+        <div class="service-tile-num">05</div>
+        <div class="service-tile-title">Guest Supply Replenishment</div>
+        <div class="service-tile-desc">Toiletries, paper products, kitchen basics — we restock after every clean to your agreed par levels. Guests notice the details.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <!-- WHY -->
+  <div class="pm-section">
+    <div class="pm-section-label">Why KleenBNB Crew</div>
+    <h2>Built for volume. Built for reliability.</h2>
+    <p class="pm-section-sub">Property managers need a cleaning partner they can trust at scale. Here's what we bring to every partnership.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">Reliable & Punctual Team</div>
+        <div class="why-desc">We show up on time, every time. No last-minute cancellations or no-shows that leave your guests without a clean property.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">Fast Turnaround Times</div>
+        <div class="why-desc">Our operations are aligned with Airbnb check-in schedules. We work within your guest windows, not around them.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">Consistent Quality</div>
+        <div class="why-desc">Structured checklists for every clean. Photo documentation after every turnover. The same standard across every property, every visit.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">04</div>
+        <div class="why-title">Flexible Capacity</div>
+        <div class="why-desc">We can scale up for peak demand periods — weekends, summer season, events. Your portfolio coverage doesn't slip when it matters most.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">05</div>
+        <div class="why-title">Clear Communication</div>
+        <div class="why-desc">Quick response times, photo reports sent within 30 minutes of completion, and a direct line to our manager for anything urgent.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <!-- PRICING -->
+  <div class="pm-section">
+    <div class="pm-section-label">Partner pricing</div>
+    <h2>Volume rates. No surprises.</h2>
+    <p class="pm-section-sub">These are indicative partner rates — lower than our standard pricing in recognition of the volume and continuity a property management partnership brings.</p>
+
+    <div class="pricing-layout">
+      <div class="pricing-table-wrap">
+        <div class="pricing-table-head">
+          <span>Turnover Clean — Partner Rate</span>
+          <span class="partner-badge">PM Rate</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-size">Studio</span>
+          <span class="pricing-row-range">€40 – €50</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-size">1 Bedroom</span>
+          <span class="pricing-row-range">€50 – €65</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-size">2 Bedroom</span>
+          <span class="pricing-row-range">€65 – €85</span>
+        </div>
+        <div class="pricing-row">
+          <span class="pricing-row-size">3+ Bedroom</span>
+          <span class="pricing-row-range">€85 – €120</span>
+        </div>
+      </div>
+
+      <div class="pricing-notes">
+        <div class="pricing-note-card">
+          <div class="pnc-icon">📦</div>
+          <div>
+            <div class="pnc-title">Volume discounts available</div>
+            <div class="pnc-desc">Ongoing partnerships with 5+ properties receive additional discounts. We'll agree a fixed monthly rate once we understand your portfolio size and frequency.</div>
+          </div>
+        </div>
+        <div class="pricing-note-card">
+          <div class="pnc-icon">⚡</div>
+          <div>
+            <div class="pnc-title">Same-day & emergency cleans</div>
+            <div class="pnc-desc">Express and last-minute bookings are available at a premium rate. We'll always confirm the surcharge before proceeding.</div>
+          </div>
+        </div>
+        <div class="pricing-note-card">
+          <div class="pnc-icon">📄</div>
+          <div>
+            <div class="pnc-title">Monthly invoicing available</div>
+            <div class="pnc-desc">For ongoing partnerships we offer consolidated monthly invoicing, making it easy to manage costs across your entire portfolio.</div>
+          </div>
+        </div>
+        <div class="pricing-note-card">
+          <div class="pnc-icon">💶</div>
+          <div>
+            <div class="pnc-title">All prices exclude VAT</div>
+            <div class="pnc-desc">Prices shown are net. VAT will be applied at the applicable Portuguese rate and shown on all invoices.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <!-- TRIAL -->
+  <div class="trial-block">
+    <div class="trial-content">
+      <div class="trial-tag">How to start</div>
+      <h2>Let's do a trial clean first.</h2>
+      <p>We recommend starting with a trial clean on one of your properties — at no extra cost to you — so you can evaluate our quality, speed, and communication before committing to anything. Most property managers who try us once don't look back.</p>
+    </div>
+    <div class="trial-contact">
+      <div class="tc-label">Contact us directly</div>
+      <div class="tc-name">Lisa</div>
+      <div class="tc-role">Manager, KleenBNB Crew</div>
+      <div class="tc-item">
+        <div class="tc-item-icon">📞</div>
+        <a href="tel:+351911770703">+351 91 177 0703</a>
+      </div>
+      <div class="tc-item">
+        <div class="tc-item-icon">✉️</div>
+        <a href="mailto:kleencrew@kleenbnb.com">kleencrew@kleenbnb.com</a>
+      </div>
+      <div class="tc-item">
+        <div class="tc-item-icon">🌐</div>
+        <a href="https://www.kleenbnb.com" target="_blank">www.kleenbnb.com</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="pm-footer">
+  <div class="pm-footer-logo">Kleen<span>BNB</span> Crew</div>
+  <div class="pm-footer-links">
+    <a href="index.html">Main website</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+  </div>
+  <div class="pm-footer-copy">© 2026 KleenBNB · Porto, Portugal</div>
+</footer>
+
+</body>
+</html>
