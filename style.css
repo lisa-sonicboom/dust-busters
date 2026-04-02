@@ -1030,6 +1030,19 @@
   }
   .footer-legal a:hover { color: var(--teal-light); }
 
+  .footer-partners-link {
+    color: var(--teal-light) !important;
+    border: 1px solid rgba(148,210,189,0.25);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.8rem !important;
+    transition: all 0.2s !important;
+  }
+  .footer-partners-link:hover {
+    background: rgba(148,210,189,0.1) !important;
+    border-color: var(--teal-light) !important;
+  }
+
   .footer-copy {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.2);
