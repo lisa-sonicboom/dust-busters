@@ -440,7 +440,7 @@
     <div class="quote-left-content">
       <div class="offer-badge">Limited offer</div>
       <h1>Your first turnover<br><em>50% off.</em></h1>
-      <p>Tell us about your property and we'll send you a tailored quote within 24 hours! Plus your exclusive first-clean discount, no strings attached.</p>
+      <p>Tell us about your property and we'll send you a tailored quote within 24 hours — plus your exclusive first-clean discount, no strings attached.</p>
 
       <div class="offer-box">
         <div class="offer-icon">🏷️</div>
@@ -561,7 +561,7 @@
     <div class="success-state" id="successState">
       <div class="success-icon">✓</div>
       <h3>Request received!</h3>
-      <p>Thanks! We'll review your details and send your personalised quote to your email within 24 hours.</p>
+      <p>Thanks — we'll review your details and send your personalised quote to your email within 24 hours.</p>
       <div class="success-offer">
         <strong>🏷️ Your 50% off first turnover is reserved.</strong>
         We'll include it in your quote email.
@@ -581,13 +581,14 @@
     <a href="index.html#faq">FAQ</a>
   </div>
   <div class="footer-legal">
+    <a href="partners.html" class="footer-partners-link">🏢 Property Managers</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms & Conditions</a>
   </div>
-  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="mailto:kleencrew@kleenbnb.com" style="color:inherit;">kleencrew@kleenbnb.com</a></div>
+  <div class="footer-copy">© 2026 KleenBNB · Porto, Portugal · <a href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9c2c5ccccc7cbc7cb87d9dd" style="color:inherit;"><span class="__cf_email__" data-cfemail="3f565159507f54535a5a515d515d114f4b">[email&#160;protected]</span></a></div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 async function submitForm() {
   const firstName = document.getElementById('firstName').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -629,7 +630,7 @@ async function submitForm() {
   errorNote.style.display = 'none';
 
   try {
-    const res = await fetch('https://formspree.io/f/xykbkzgo', {
+    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
@@ -650,14 +651,4 @@ async function submitForm() {
   }
 }
 
-document.querySelectorAll('input, select, textarea').forEach(el => {
-  el.addEventListener('input', () => el.style.borderColor = '');
-});
-
-function toggleNav(btn) {
-  btn.classList.toggle('open');
-  document.getElementById('navLinks').classList.toggle('open');
-}
-</script>
-</body>
-</html>
+document.querySelectorAll('input, select, textarea')
